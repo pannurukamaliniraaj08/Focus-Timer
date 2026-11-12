@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block bg %}
+    <style>
+        body {
+            background-color: #1A0B2E;
+            margin: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block theme %}
+    <video id="timer-video" class="bg-video" muted loop playsinline>
+                    <source src="{{ url_for('static', filename='cyberpunk.mp4') }}" type="video/mp4">
+    </video>
+{% endblock %}
+
+{% block chart %}
+<div style="background: #28143E; padding: 20px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);box-sizing: border-box; min-width: 100px;">
+    <h3 style="color: #FFFFFF; text-align: center; margin-bottom: 15px; font-weight: bold;">Focus Daily Stats</h3>
+
+    <div style="position: relative; height: 320px; width: 100%;">
+        <canvas id="acquisitions"></canvas>
+    </div>
+</div>
+<script src="/static/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("/get-daily-stats")
+        .then(response => response.json())
+        .then(data => {
+            const canvas = document.getElementById('acquisitions');
+            if (!canvas) return;
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: data.map(row => row.date),
+                    datasets: [{
+                        label: 'Focus Hours',
+                        data: data.map(row => row.hours),
+                        backgroundColor: '#FEE440',
+                        borderColor: '#FFFFFF',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        categoryPercentage: 1.0,
+                        barPercentage: 0.9,
+                        barThickness: 'flex'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                             grid: { display: false },
+                             offset: true,
+                            },
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+        })
+        .catch(err => console.error("Error loading chart:", err));
+});
+</script>
+{% endblock %}

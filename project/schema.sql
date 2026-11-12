@@ -1,0 +1,27 @@
+-- schema.sql
+
+--DROP TABLE IF EXISTS users;
+--DROP TABLE IF EXISTS study_sessions;
+--DROP TABLE IF EXISTS tasks;
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    hash TEXT NOT NULL,
+    coins INTEGER DEFAULT 0
+);
+
+CREATE TABLE study_sessions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    duration_minutes INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
+CREATE TABLE purchases(
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ user_id INTEGER NOT NULL,
+ theme NOT NULL,
+ purchased_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ FOREIGN KEY (user_id) REFERENCES users(id),
+ UNIQUE(user_id, theme));

@@ -1,0 +1,290 @@
+.register_background{
+    background-image: url("register_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 15px;
+  padding-top: 100px;
+}
+.login_background{
+    background-image: url("login_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+}
+.button-group {
+    margin-top: 320px;
+}
+.left-register-container {
+    padding-left: 50px;
+    width: 250px;
+    padding-bottom: 50px;
+}
+button {
+ font-size: 17px;
+ padding: 0.5em 2em;
+ border: transparent;
+ box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+ background: dodgerblue;
+ color: white;
+ border-radius: 4px;
+}
+
+button:hover {
+ background: rgb(2,0,36);
+ background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+button:active {
+ transform: translate(0em, 0.2em);
+}
+.card {
+  position: relative;
+  width: 11.875em;
+  height: 16.5em;
+  box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 120ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 0.5em;
+  padding-bottom: 3.4em;
+}
+.card .title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 1.875em;
+  font-weight: 400;
+  color: #000;
+}
+.card .price {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 0.625em;
+  color: #000;
+}
+.card .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.card:active {
+  transform: scale(0.98);
+}
+.text {
+  max-width: 55px;
+}
+.image-light {
+  background-image: url("light.jpg");
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+}
+.image-dark {
+  background-image: url("dark.jpg");
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+}
+.image-pastel {
+  background-image: url("pastel.jpg");
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+}
+.image-forest {
+  background-image: url("forest.jpg");
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+}
+.image-cyberpunk {
+  background-image: url("cyberpunk.jpg");
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+}
+.image-expresso {
+  background-image: url("expresso.jpg");
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+}
+.home-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 20px;
+}
+header{
+    text-align: center;
+    background-color: #1676B5;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    padding: 3rem 1rem;
+}
+.but-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  padding-top: 20px;
+  margin-left: auto;
+}
+header.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1676B5;
+}
+.nav-spacer {
+    width: 400px;
+}
+.rounded-video {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.timer-card {
+    position: relative;
+    width: 320px;
+    height: 180px;
+    margin: 20px auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #111;
+}
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.timer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+/* From Uiverse.io by bbaginuk */
+.play {
+  --color: white;
+  --size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+}
+.play .play {
+  position: absolute;
+  animation: keyframes-fill 0.3s;
+}
+.play .pause {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill 0.3s;
+}
+.play input:checked ~ .play {
+  display: none;
+}
+.play input:checked ~ .pause {
+  display: block;
+}
+.play input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+@keyframes keyframes-fill {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+/* Override Bootstrap container centering */
+.container.py-3{
+    margin-left: 0px !important;
+    margin-right: auto ;
+    max-width: 600px;
+}
+.inputs-group {
+    display: flex;
+    gap: 1px;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.timer-card {
+    margin: 10px 0 !important;
+}
+.start-btn, .quit-btn {
+    display: block;
+    width: 120px;
+    margin: 5px 0 !important;
+}
+
